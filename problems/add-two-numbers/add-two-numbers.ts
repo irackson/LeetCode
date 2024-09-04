@@ -5,7 +5,7 @@
  */
 
 // @lc code=start
-
+/*
 class ListNode {
     val: number;
     next: ListNode | null;
@@ -13,17 +13,13 @@ class ListNode {
         this.val = val === undefined ? 0 : val;
         this.next = next === undefined ? null : next;
     }
+} */
 
-    reverseStringify(...args: [ListNode] | []): string {
-        if (args.length === 0)
-            return this.next
-                ? `${this.reverseStringify(this.next)}${this.val}`
-                : `${this.val}`;
-
-        const [nextList] = args;
-        return nextList.next ? nextList.reverseStringify() : `${nextList.val}`;
-    }
-}
+const reverseStringify = (listNode: ListNode | null): string => {
+    if (!listNode) return '';
+    if (!listNode.next) return `${listNode.val}`;
+    return `${reverseStringify(listNode.next)}${listNode.val}`;
+};
 
 function addTwoNumbers(
     l1: ListNode | null,
@@ -34,14 +30,13 @@ function addTwoNumbers(
     if (!l2) return addTwoNumbers(l1, new ListNode(0));
 
     const sum = [l1, l2]
-        .map((l) => parseInt(l.reverseStringify()))
+        .map((l) => parseInt(reverseStringify(l)))
         .reduce((accu, curr) => accu + curr, 0);
 
     const intArray = sum
         .toString()
         .split('')
-        .map((s) => parseInt(s))
-        .reverse();
+        .map((s) => parseInt(s));
 
     let result = null;
 
@@ -57,7 +52,8 @@ function addTwoNumbers(
 const l1 = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4))));
 const l2 = new ListNode(5, new ListNode(6, new ListNode(7, new ListNode(8))));
 const sum = addTwoNumbers(l1, l2);
-//4321+8765=13086
-//answer should be: 68031 because that is the reverse of the sum
-console.log({ l1: l1.reverseStringify(), l2: l2.reverseStringify() });
-console.log(sum?.reverseStringify());
+console.log({ sum: reverseStringify(sum) });
+// 4321+8765=13086
+// answer should be: 68031 because that is the reverse of the sum
+// console.log({ l1: reverseStringify(l1), l2: reverseStringify(l2) });
+// console.log(reverseStringify(sum));
