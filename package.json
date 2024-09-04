@@ -1,0 +1,23 @@
+{
+  "name": "leetcode",
+  "version": "1.0.0",
+  "description": "## My solutions to LeetCode problems",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/irackson/LeetCode.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/irackson/LeetCode/issues"
+  },
+  "homepage": "https://github.com/irackson/LeetCode#readme",
+  "dependencies": {
+    "lodash.isequal": "^4.5.0"
+  }
+}
