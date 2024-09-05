@@ -1,4 +1,3 @@
-import { describe, it, expect } from '@jest/globals';
 import { ListNode } from '../../utils/ListNode/ListNode';
 
 /*
@@ -53,11 +52,16 @@ function addTwoNumbers(
 }
 // @lc code=end
 
+// #region LOGS
 const l1 = createLinkedNumberList([2, 4, 3]);
 const l2 = createLinkedNumberList([5, 6, 4]);
 const sum = addTwoNumbers(l1, l2);
 console.log({ sum, print: stringify(sum) });
+// #endregion
 
+// #region TEST
+if (!process.env.JEST_WORKER_ID) process.exit(0);
+import { describe, it, expect } from '@jest/globals';
 describe('createLinkedNumberList', () => {
     it('should create a linked list from an array of digits', () => {
         const input = [2, 4, 3];
@@ -95,3 +99,4 @@ describe('createLinkedNumberList', () => {
         expect(result).toEqual(expectedOutput);
     });
 });
+// #endregion
