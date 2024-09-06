@@ -1,5 +1,8 @@
+//#region IMPORTS
 import { ListNode } from '../../utils/ListNode/ListNode';
+//#endregion IMPORTS
 
+//#region LEETCODE
 /*
  * @lc app=leetcode id=2 lang=typescript
  *
@@ -51,6 +54,7 @@ function addTwoNumbers(
     return createLinkedNumberList(numToNumArray(sum));
 }
 // @lc code=end
+//#endregion LEETCODE
 
 // #region LOGS
 const l1 = createLinkedNumberList([2, 4, 3]);
@@ -69,8 +73,10 @@ describe('createLinkedNumberList', () => {
             3,
             new ListNode(4, new ListNode(2))
         );
+        //#region asdf
         const result = createLinkedNumberList(input);
         expect(result).toEqual(expectedOutput);
+        //#endregion asdf
     });
 
     it('should create a linked list with a single node for a single digit array', () => {
