@@ -73,10 +73,8 @@ describe('createLinkedNumberList', () => {
             3,
             new ListNode(4, new ListNode(2))
         );
-        //#region asdf
         const result = createLinkedNumberList(input);
         expect(result).toEqual(expectedOutput);
-        //#endregion asdf
     });
 
     it('should create a linked list with a single node for a single digit array', () => {
@@ -103,6 +101,14 @@ describe('createLinkedNumberList', () => {
         );
         const result = createLinkedNumberList(input);
         expect(result).toEqual(expectedOutput);
+    });
+});
+
+describe('stringify', () => {
+    it('should print the listNode as a string', () => {
+        const linkedList = createLinkedNumberList([9, 2, 1]);
+        const result = stringify(linkedList);
+        expect(result).toEqual('129');
     });
 });
 // #endregion
