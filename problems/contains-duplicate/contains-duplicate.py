@@ -8,7 +8,8 @@ from typing import List
 
 # @lc code=start
 
-# https://neetcode.io/problems/duplicate-integer
+# Inspiration: https://neetcode.io/problems/duplicate-integer
+# My solution: https://leetcode.com/problems/contains-duplicate/submissions/1411239839
 """
 Plan: return length of set < length of array
 """
