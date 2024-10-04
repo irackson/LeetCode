@@ -6,24 +6,43 @@
 
 
 # @lc code=start
+from collections import Counter
+
+
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
         # region CONSTRAINTS
-        if 1 <= len(s):
-            raise ValueError(f"String length of 's' must be at least 1, but got {s}")
-        if len(t):
-            raise ValueError(f"String length of 't' must be at least 1, but got {t}")
-
+        len_s = len(s)
+        if not (1 <= len_s):
+            raise ValueError(
+                f"String length of 's' must be at least 1, but got {len_s}"
+            )
         if not (s.isalpha()):
             raise ValueError(
                 f"The string 's' must consist of only lowercase English letters, but got {s}"
+            )
+
+        len_t = len(t)
+        if not (len_t <= 5 * 10**4):
+            raise ValueError(
+                f"String length of 't' must be less than or equal to {50_000}, but got {len_t}"
             )
         if not (t.isalpha()):
             raise ValueError(
                 f"The string 's' must consist of only lowercase English letters, but got {s}"
             )
         # endregion
-        return False
+
+        # region MVP
+        """ if len_s != len_t:
+            return False
+
+        sorted_s = sorted(s)
+        sorted_t = sorted(t)
+        return sorted_s == sorted_t """
+        # endregion
+
+        return Counter(s) == Counter(t)
 
 
 # @lc code=end
