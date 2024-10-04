@@ -2,7 +2,7 @@
   "name": "leetcode",
   "version": "1.0.0",
   "description": "## My solutions to LeetCode problems",
-  "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "jest"
   },
