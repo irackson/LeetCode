@@ -8,6 +8,21 @@
 # @lc code=start
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
+        # region CONSTRAINTS
+        if 1 <= len(s):
+            raise ValueError(f"String length of 's' must be at least 1, but got {s}")
+        if len(t):
+            raise ValueError(f"String length of 't' must be at least 1, but got {t}")
+
+        if not (s.isalpha()):
+            raise ValueError(
+                f"The string 's' must consist of only lowercase English letters, but got {s}"
+            )
+        if not (t.isalpha()):
+            raise ValueError(
+                f"The string 's' must consist of only lowercase English letters, but got {s}"
+            )
+        # endregion
         return False
 
 
